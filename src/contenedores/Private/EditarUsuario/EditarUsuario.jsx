@@ -17,6 +17,8 @@ export default function ActualizarUsuario() {
     const navigate = useNavigate();
     const userId = new URLSearchParams(location.search).get("id");
 console.log(userId);
+
+
     useEffect(() => {
         axios
             .put(`https://api-proyecto-main.vercel.app/api/usuarios/${userId}`)
@@ -46,6 +48,8 @@ console.log(userId);
             setters[name](value); // Llama a la función de set correspondiente
         }
     };
+
+
     const handleUpdate = (event) => {
         event.preventDefault();
         if (

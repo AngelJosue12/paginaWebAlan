@@ -67,7 +67,7 @@ export const Logiin = () => {
                         <input class="input" type="password" placeholder="Password"  value={password}  onChange={(e) => setPassword(e.target.value)}/>
                        
                         <button type="button" class="btn" onClick={handleLogin} >login</button>
-                        
+                        <p>¿Olvidaste tu password? <span class="span"><Link to="/RecuperarPassword">Out Up</Link></span></p> 
                         <p>¿No tienes cuenta? <span class="span"><Link to="/RegistroUsuarios">Sign Up</Link></span></p>
                         {loginError && <p style={{color:"#5b0808",fontWeight:"bold"}}>{loginError}</p>}
                   </form>

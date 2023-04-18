@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Ver.css";
-import { useNavigate,Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default function VerProductos() {
-  const navigate = useNavigate();
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function VerProductos() {
   const handleEliminarUsuario = (id) => {
     const confirmacion = window.confirm("¿Estás seguro que deseas eliminar el Productoo?");
     if (confirmacion) {
-      axios.delete(`https://api-proyecto-main.vercel.app/api/categorias/${id}`)
+      axios.delete(`https://api-proyecto-main.vercel.app/api/productos/${id}`)
         .then(() => {
           const newUsuarios = products.filter(products => products._id !== id);
           setProducts(newUsuarios);
@@ -37,25 +37,17 @@ export default function VerProductos() {
     marginRight: "4px",
   };
 
-  const editButtonStyle = {
-    ...buttonStyle,
-    backgroundColor: "#2196F3",
-  };
-
   const deleteButtonStyle = {
     ...buttonStyle,
     backgroundColor: "#f44336",
   };
-  const handleAddToCart = (product) => {
-    // Aquí puedes implementar la lógica para agregar un producto al carrito
-    console.log("Agregaste un producto al carrito:", product);
-  };
+
 
   return ( 
        <section class="products" id="products">
     <h1 class="heading"> productos <span> nuevos </span> </h1>
     
-    <button variant="primary"  class="btn" ><Link to="/RProductos">Agregar Producto</Link>    </button>
+    <button variant="primary"  class="btn" ><Link to="/RegistrarProducto">Agregar Producto</Link>    </button>
     <div class="swiper product-slider">
           {products.map((product) => (
         <div class="swiper-wrapper">

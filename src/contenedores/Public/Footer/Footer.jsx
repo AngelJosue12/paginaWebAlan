@@ -17,7 +17,8 @@ export default function Footer() {
   
         <div className='app__footer-links_logo'>
             <img src={immages.Nab} alt='footer_logo'/>
-            <p className="p__opensans">Si puedes Imaginarlo, puedes lograrlo</p>
+            <p className="p__opensans">ALAN MARTINEZ HERNANDEZ </p>
+            <p className="p__opensans">Yt : WasakaBegeinTv </p>
               <img src={immages.spoon} alt="spoon" className='spoon__img' style={{ marginTop:15 }}/>
   
                   <div className='app__footer-links_icons'>

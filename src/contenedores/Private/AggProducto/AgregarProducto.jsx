@@ -42,11 +42,6 @@ export default function AgregarProducto() {
         setError('');
       }
   
-   
-
-    
-      
-   
 
     const formData = new FormData();
     formData.append('Imagen', imagen);
@@ -58,7 +53,7 @@ export default function AgregarProducto() {
     formData.append('nombrePresentacion', presentacion);
 
     axios.post('https://sein.onrender.com/api/productsImage', formData)
-      .then(res => console.log(res))
+      .then(res =>{ alert('Producto registrado exitosamente');})
       .catch(err => console.log(err));
   }
 
@@ -71,7 +66,7 @@ export default function AgregarProducto() {
           <form className='inputs-container' onSubmit={onSubmit} >
                 <input class="input" type="text" placeholder="Nombre producto"  id="nombreProducto" value={nombreProducto} onChange={(e) => setNombreProducto(e.target.value)}/>
 
-                <input class="input" type="text" placeholder="descripcion del producto" i id="descripcion"
+                <input class="input" type="text" placeholder="descripcion del producto"  id="descripcion"
           value={descripcion}
           onChange={(e) => setDescripcion(e.target.value)}/>
 

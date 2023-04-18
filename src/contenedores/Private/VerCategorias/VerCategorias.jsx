@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import {  useNavigate } from "react-router-dom";
 
 function ListaCategoria() {
-
+  const navigate = useNavigate();
   const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
@@ -58,7 +58,10 @@ function ListaCategoria() {
     marginRight: "4px",
   };
 
-  
+  const editButtonStyle = {
+    ...buttonStyle,
+    backgroundColor: "#2196F3",
+  };
 
   const deleteButtonStyle = {
     ...buttonStyle,
@@ -71,14 +74,15 @@ function ListaCategoria() {
       <br />
       <br />
 
-      {/*      <Link to="/RegAdmin" style={buttonStyle1}>Registrar Administrador</Link>*/}
+      
+       <button style={editButtonStyle} type="button" onClick={() => navigate(`/RCategorias`)}>Agregar</button>
       <br />
-      <br />
+       <br />
       <table style={tableStyle}>
         <thead>
           <tr>
             <th style={thStyle}>Nombre Categoria</th>
-          
+         
             <th style={thStyle}></th>
           </tr>
         </thead>
@@ -88,7 +92,7 @@ function ListaCategoria() {
               <td style={tdStyle}>{usuario.nombreCategoria}</td>
              
               <td style={tdStyle}>
-               
+              
                 <button style={deleteButtonStyle} onClick={() => handleEliminarUsuario(usuario._id)}>Eliminar</button>
               </td>
             </tr>
